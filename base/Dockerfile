@@ -11,6 +11,7 @@ RUN set -x; \
   && apt-get install -y --no-install-recommends \
     ca-certificates \
     curl \
+    git \
     dirmngr \
     fonts-noto-cjk \
     gnupg \

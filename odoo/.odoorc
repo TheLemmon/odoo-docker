@@ -1,5 +1,5 @@
 [options]
-addons_path = /home/ubuntu/odoo/odoo/addons,/home/ubuntu/odoo-addons,/home/ubuntu/odoo-addons-external,/home/ubuntu/enterprise,/home/ubuntu/odoo/addons
+addons_path = /odoo-addons,/odoo-addons-external
 admin_passwd = OodOskg7812!
 csv_internal_sep = ,
 data_dir = /home/ubuntu/.local/share/Odoo
@@ -40,7 +40,7 @@ pg_path = None
 pidfile = None
 proxy_mode = False
 reportgz = False
-server_wide_modules = base,web,auto_update_modules
+server_wide_modules = base,web
 smtp_password = False
 smtp_port = 25
 smtp_server = localhost

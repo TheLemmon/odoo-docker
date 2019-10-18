@@ -23,12 +23,15 @@ RUN chmod +x git_clone.sh
 RUN ./git_clone.sh
 
 # Install custom python requirements
+COPY ./requirements.txt ./requirements.txt
 RUN pip3 install -r requirements.txt
 
 # Copy Odoorc and set as default config file
-COPY ./odoorc ./odoorc
-ENV ODOO_RC ./odoorc
+COPY ./.odoorc ./.odoorc
+ENV ODOO_RC ./.odoorc
 
+# Expose Odoo port
+EXPOSE 8069 8071
 
 # Set default user when runnig the container
 USER odoo
