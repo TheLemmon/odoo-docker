@@ -1,8 +1,8 @@
 [options]
-addons_path = /home/ubuntu/odoo/odoo/addons,/home/ubuntu/odoo-addons,/home/ubuntu/odoo-addons-external,/home/ubuntu/enterprise,/home/ubuntu/odoo/addons
+addons_path = /home/odoo/odoo-addons,/home/odoo/odoo-addons-external,/home/odoo/enterprise
+data_dir = /home/odoo/.local/share/Odoo
 admin_passwd = OodOskg7812!
 csv_internal_sep = ,
-data_dir = /home/ubuntu/.local/share/Odoo
 db_host = odoodev.cmys3wkb8w2g.us-east-1.rds.amazonaws.com
 db_maxconn = 10
 db_name = False
@@ -30,7 +30,7 @@ log_db = False
 log_db_level = warning
 log_handler = :INFO
 log_level = info
-logfile = /home/ubuntu/odoo-logs/odoo-server.log
+logfile = /home/odoo/odoo-logs/odoo-server.log
 logrotate = True
 longpolling_port = 8072
 max_cron_threads = 2
