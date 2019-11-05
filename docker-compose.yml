@@ -12,9 +12,5 @@ services:
     ports:
       - "8069:8069"
       - "8071:8071"
-    volumnes:
-      - odoo-logs:/home/odoo/odoo-logs
     env_file:
       .env
-  volumes:
-    odoo-logs:

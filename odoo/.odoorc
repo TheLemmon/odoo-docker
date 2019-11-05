@@ -1,13 +1,13 @@
 [options]
-addons_path = /home/odoo/odoo-addons,/home/odoo/odoo-addons-external,/home/odoo/enterprise
-data_dir = /home/odoo/.local/share/Odoo
+addons_path = /odoo-addons,/odoo-addons-external,/enterprise
+data_dir = /var/lib/odoo
 admin_passwd = OodOskg7812!
 csv_internal_sep = ,
 db_host = odoodev.cmys3wkb8w2g.us-east-1.rds.amazonaws.com
 db_maxconn = 10
 db_name = False
 db_password = odooposspast
-db_port = False
+db_port = 5432
 db_sslmode = prefer
 db_template = template0
 db_user = odoo

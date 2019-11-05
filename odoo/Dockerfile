@@ -27,11 +27,14 @@ COPY requirements.txt ./requirements.txt
 RUN pip3 install -r ./requirements.txt
 
 # Copy Odoorc and set as default config file
-COPY .odoorc /home/.odoorc
-ENV ODOO_RC /home/.odoorc
+COPY .odoorc /home/odoo.conf
+ENV ODOO_RC /home/odoo.conf
+
+VOLUME ["/var/lib/odoo"]
 
 # Expose Odoo services
 EXPOSE 8069 8071
 
 # Set default user when runnig the container
 USER odoo
+CMD ["odoo"]
