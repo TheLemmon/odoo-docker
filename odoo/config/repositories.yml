@@ -10,7 +10,7 @@
     odoo-addons: https://$GITHUB_TOKEN@github.com/nahualventure/odoo-addons.git
   merges:
     - odoo-addons $GIT_BRANCH
-    target: odoo-addons $GIT_BRANCH
+  target: odoo-addons $GIT_BRANCH
 
 ./odoo-addons-external:
   remotes:
