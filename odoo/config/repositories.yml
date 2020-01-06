@@ -17,4 +17,4 @@
     odoo-addons-external: https://$GITHUB_TOKEN@github.com/nahualventure/odoo-addons-external.git
   merges:
     - odoo-addons-external $GIT_BRANCH
-    target: odoo-addons-external $GIT_BRANCH
+  target: odoo-addons-external $GIT_BRANCH
