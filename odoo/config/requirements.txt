@@ -1,0 +1,9 @@
+boto3
+git-aggregator
+paramiko
+num2words
+redis
+watchdog
+xlwt
+zeep
+requests

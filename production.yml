@@ -1,0 +1,23 @@
+version: "3.0"
+services:
+  odoo:
+    restart: always
+    container_name: odoo
+    build:
+      context: odoo/
+      args:
+        - GIT_BRANCH=13.0
+        - ODOO_VERSION=13.0
+        - GITHUB_TOKEN=!configure
+    ports:
+      - "8069:8069"
+      - "8071:8071"
+      - "8072:8072"
+    env_file:
+      .env
+    volumes:
+      - odoo-web-data:/var/lib/odoo
+    command: odoo
+
+volumes:
+  odoo-web-data:

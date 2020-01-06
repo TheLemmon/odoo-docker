@@ -1,0 +1,20 @@
+./enterprise:
+  remotes:
+    enterprise: https://$GITHUB_TOKEN@github.com/odoo/enterprise.git
+  merges:
+    - enterprise $GIT_BRANCH
+  target: enterprise $GIT_BRANCH
+
+./odoo-addons:
+  remotes:
+    odoo-addons: https://$GITHUB_TOKEN@github.com/nahualventure/odoo-addons.git
+  merges:
+    - odoo-addons $GIT_BRANCH
+    target: odoo-addons $GIT_BRANCH
+
+./odoo-addons-external:
+  remotes:
+    odoo-addons-external: https://$GITHUB_TOKEN@github.com/nahualventure/odoo-addons-external.git
+  merges:
+    - odoo-addons-external $GIT_BRANCH
+    target: odoo-addons-external $GIT_BRANCH

@@ -1,0 +1,9 @@
+# folders
+base/
+nginx/
+odoo-logs/
+src/
+
+# Docker
+docker-compose.yml
+

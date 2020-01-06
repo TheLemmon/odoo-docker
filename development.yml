@@ -1,0 +1,56 @@
+version: "3.0"
+services:
+
+  postgresql:
+    image: postgres:10
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_PASSWORD=odooposspast
+      - POSTGRES_USER=odoo
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - odoo-db-data:/var/lib/postgresql/data/pgdata
+    ports:
+      - "5432:5432"
+    expose:
+      - "5432"
+
+  odoo:
+    restart: always
+    container_name: odoo13
+    depends_on:
+      - postgresql
+    build:
+      context: odoo/
+      args:
+        - GIT_BRANCH=13.0
+        - ODOO_VERSION=13.0
+        - GITHUB_TOKEN=89a0a51d3e7ed7a87c06e491f9b2cae041257805
+    ports:
+      - "8069:8069"
+      - "8071:8071"
+      - "8072:8072"
+    env_file:
+      .env
+    volumes:
+      - ./src/odoo-addons:/home/odoo/src/odoo-addons:rw
+      - ./src/odoo-addons-external:/home/odoo/src/odoo-addons-external:rw
+      - ./odoo/config/odoo.conf:/home/odoo/odoo.conf:consistent,rw
+      - ./odoo-logs:/home/odoo/odoo-logs
+      - odoo13-web-data:/var/lib/odoo
+    command: odoo --dev all
+  
+  pgadmin:
+    container_name: pgadmin4
+    image: dpage/pgadmin4
+    depends_on:
+      - postgresql
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=oscaresgil@gmail.com
+      - PGADMIN_DEFAULT_PASSWORD=edoo123
+    ports:
+      - "80:80"
+
+volumes:
+  odoo13-web-data:
+  odoo-db-data:
