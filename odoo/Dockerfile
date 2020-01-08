@@ -18,7 +18,6 @@ WORKDIR /home/odoo/config
 COPY config/requirements.txt ./requirements.txt
 COPY config/repositories.yml ./repositories.yml
 COPY config/addons-external.yml ./addons-external.yml
-COPY config/restructure-addons-external.py ./restructure-addons-external.py
 RUN pip3 install -r ./requirements.txt
 
 # Clone Github repositories (Custom modules)
@@ -27,8 +26,9 @@ RUN gitaggregate -c /home/odoo/config/repositories.yml --expand-env
 
 # Clone third party repositories
 WORKDIR  /home/odoo/temp/addons-external
+COPY config/restructure-addons-external.py ./restructure-addons-external.py
 RUN gitaggregate -c /home/odoo/config/addons-external.yml --expand-env
-RUN python3 /home/odoo/config/restructure-addons-external.py
+RUN python3 restructure-addons-external.py
 
 WORKDIR /home/odoo
 

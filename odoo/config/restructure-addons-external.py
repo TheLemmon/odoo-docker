@@ -2,7 +2,7 @@ import os
 import yaml
 import shutil
 
-yml_path = "home/odoo/config/addons-external.yml"
+yml_path = "/home/odoo/config/addons-external.yml"
 src_path = "/home/odoo/src/addons-external"
 main_path = "/home/odoo/temp/addons-external"
 
@@ -17,4 +17,4 @@ if __name__ == "__main__":
                 continue
             
             for dir_name in dirs:
-                shutil.move(f"{root}/{dir_name}", src_path, copy_function=shutil.copytree)
+                shutil.move(f"{root}/{dir_name}", src_path)
