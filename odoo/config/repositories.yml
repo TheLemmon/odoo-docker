@@ -12,9 +12,9 @@
     - odoo-addons $GIT_BRANCH
   target: odoo-addons $GIT_BRANCH
 
-./odoo-addons-external:
+./odoo-fel:
   remotes:
-    odoo-addons-external: https://$GITHUB_TOKEN@github.com/nahualventure/odoo-addons-external.git
+    odoo-fel: https://$GITHUB_TOKEN@github.com/nahualventure/odoo-fel.git
   merges:
-    - odoo-addons-external $GIT_BRANCH
-  target: odoo-addons-external $GIT_BRANCH
+    - odoo-fel $GIT_BRANCH
+  target: odoo-fel $GIT_BRANCH

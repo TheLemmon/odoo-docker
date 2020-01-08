@@ -4,20 +4,35 @@ services:
     restart: always
     container_name: odoo
     build:
-      context: odoo/
+      context: ./odoo/
       args:
         - GIT_BRANCH=13.0
         - ODOO_VERSION=13.0
-        - GITHUB_TOKEN=!configure
+        - GITHUB_TOKEN=49e2c826e5493dc0925cf9bd93a3797c2133bf7b
     ports:
       - "8069:8069"
       - "8071:8071"
       - "8072:8072"
+    expose:
+      - "8069"
+      - "8072"
     env_file:
       .env
     volumes:
       - odoo-web-data:/var/lib/odoo
     command: odoo
+
+  nginx:
+    restart: always
+    container_name: nginx
+    build:
+      context: ./nginx/
+    ports:
+      - "80:80"
+    volumes:
+      - /www/static
+    links:
+      - odoo:odoo
 
 volumes:
   odoo-web-data:
