@@ -18,7 +18,10 @@ WORKDIR /home/odoo/config
 COPY config/requirements.txt ./requirements.txt
 COPY config/repositories.yml ./repositories.yml
 COPY config/addons-external.yml ./addons-external.yml
+
 COPY config/restructure-addons-external.py ./restructure-addons-external.py
+RUN chmod -R 755 ./restructure-addons-external.py
+
 RUN pip3 install -r ./requirements.txt
 
 # Clone Github repositories (Custom modules)
