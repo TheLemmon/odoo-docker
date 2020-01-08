@@ -18,6 +18,7 @@ WORKDIR /home/odoo/config
 COPY config/requirements.txt ./requirements.txt
 COPY config/repositories.yml ./repositories.yml
 COPY config/addons-external.yml ./addons-external.yml
+COPY config/restructure-addons-external.py ./restructure-addons-external.py
 RUN pip3 install -r ./requirements.txt
 
 # Clone Github repositories (Custom modules)
@@ -26,7 +27,6 @@ RUN gitaggregate -c /home/odoo/config/repositories.yml --expand-env
 
 # Clone third party repositories
 WORKDIR  /home/odoo/temp/addons-external
-COPY config/restructure-addons-external.py ./restructure-addons-external.py
 RUN gitaggregate -c /home/odoo/config/addons-external.yml --expand-env
 
 WORKDIR /home/odoo
@@ -42,6 +42,9 @@ ENV ODOO_RC /home/odoo.conf
 # Copy entrypoint script
 COPY ./entrypoint.sh bin/
 RUN chmod +x bin/entrypoint.sh
+# Copy build-script
+COPY ./build-script.sh bin/
+RUN chmod +x bin/build-script.sh
 
 # Expose Odoo services
 # Web service - Longpolling - XML-RPC
@@ -49,5 +52,5 @@ EXPOSE 8069 8071 8072
 
 VOLUME ["/var/lib/odoo"]
 
-ENTRYPOINT ["bin/entrypoint.sh"]
+ENTRYPOINT ["bin/entrypoint.sh", "bin/build-script.sh"]
 CMD ["odoo"]
