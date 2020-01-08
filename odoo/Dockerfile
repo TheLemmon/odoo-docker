@@ -31,6 +31,7 @@ RUN gitaggregate -c /home/odoo/config/repositories.yml --expand-env
 # Clone third party repositories
 WORKDIR  /home/odoo/temp/addons-external
 RUN gitaggregate -c /home/odoo/config/addons-external.yml --expand-env
+RUN /usr/bin/python3 /home/odoo/config/restructure-addons-external.py
 
 WORKDIR /home/odoo
 
@@ -45,9 +46,6 @@ ENV ODOO_RC /home/odoo.conf
 # Copy entrypoint script
 COPY ./entrypoint.sh bin/
 RUN chmod +x bin/entrypoint.sh
-# Copy build-script
-COPY ./build-script.sh bin/
-RUN chmod +x bin/build-script.sh
 
 # Expose Odoo services
 # Web service - Longpolling - XML-RPC
