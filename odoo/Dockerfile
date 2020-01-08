@@ -28,7 +28,6 @@ RUN gitaggregate -c /home/odoo/config/repositories.yml --expand-env
 WORKDIR  /home/odoo/temp/addons-external
 COPY config/restructure-addons-external.py ./restructure-addons-external.py
 RUN gitaggregate -c /home/odoo/config/addons-external.yml --expand-env
-RUN python3 restructure-addons-external.py
 
 WORKDIR /home/odoo
 

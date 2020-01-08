@@ -20,7 +20,9 @@ services:
       .env
     volumes:
       - odoo-web-data:/var/lib/odoo
-    command: odoo
+    command: >
+      bash -c "python3 restructure-addons-external.py
+      && odoo"
 
   nginx:
     restart: always
