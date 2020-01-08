@@ -55,5 +55,5 @@ EXPOSE 8069 8071 8072
 
 VOLUME ["/var/lib/odoo"]
 
-ENTRYPOINT ["bin/entrypoint.sh", "bin/build-script.sh"]
+ENTRYPOINT ["bin/entrypoint.sh"]
 CMD ["odoo"]

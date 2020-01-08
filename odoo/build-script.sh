@@ -1,3 +1,6 @@
 #!/bin/bash
+
 set -e
-/home/odoo/config/restructure-addons-external.py
+python3 /home/odoo/config/restructure-addons-external.py
+exec "$@"
+

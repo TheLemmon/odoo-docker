@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import os
 import yaml
 import shutil
@@ -8,7 +9,7 @@ main_path = "/home/odoo/temp/addons-external"
 
 if __name__ == "__main__":
     with open(yml_path) as file:
-        doc = yaml.full_load(file)
+        doc = yaml.safe_load(file)
         paths_to_move = doc.keys()
         
         for (root, dirs, files) in os.walk(main_path, topdown=True):
