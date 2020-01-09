@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import os
+from os import path
 import yaml
 import shutil
 
