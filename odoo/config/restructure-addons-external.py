@@ -20,6 +20,7 @@ if __name__ == "__main__":
                 continue
             
             for dir_name in dirs:
+                print(dir_name)
                 if dir_name in GITHUB_DIRECTORIES:
                     continue
                 shutil.move(f"{root}/{dir_name}", SRC_PATH)
