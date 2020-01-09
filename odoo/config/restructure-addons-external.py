@@ -3,19 +3,23 @@ import os
 import yaml
 import shutil
 
-yml_path = "/home/odoo/config/addons-external.yml"
-src_path = "/home/odoo/src/addons-external"
-main_path = "/home/odoo/temp/addons-external"
+YML_PATH = "/home/odoo/config/addons-external.yml"
+SRC_PATH = "/home/odoo/src/addons-external"
+MAIN_PATH = "/home/odoo/temp/addons-external"
+GITHUB_DIRECTORIES = ('branches', 'hooks', 'info', 'logs', 'objects', 'refs')
+
 
 if __name__ == "__main__":
-    with open(yml_path) as file:
+    with open(YML_PATH) as file:
         doc = yaml.safe_load(file)
         paths_to_move = doc.keys()
         
-        for (root, dirs, files) in os.walk(main_path, topdown=True):
+        for (root, dirs, files) in os.walk(MAIN_PATH, topdown=True):
             current_path = f"./{root.split('/')[-1]}"        
             if current_path not in paths_to_move:
                 continue
             
             for dir_name in dirs:
-                shutil.move(f"{root}/{dir_name}", src_path)
+                if dir_name in GITHUB_DIRECTORIES:
+                    continue
+                shutil.move(f"{root}/{dir_name}", SRC_PATH)
