@@ -6,7 +6,7 @@ import shutil
 YML_PATH = "/home/odoo/config/addons-external.yml"
 SRC_PATH = "/home/odoo/src/addons-external"
 MAIN_PATH = "/home/odoo/temp/addons-external"
-GITHUB_DIRECTORIES = ('branches', 'hooks', 'info', 'logs', 'objects', 'refs')
+GITHUB_DIRECTORIES = ('branches', 'hooks', 'info', 'logs', 'objects', 'refs', '.git')
 
 
 if __name__ == "__main__":
@@ -23,4 +23,5 @@ if __name__ == "__main__":
                 print(dir_name)
                 if dir_name in GITHUB_DIRECTORIES:
                     continue
+                print(f"{root}/{dir_name}")
                 shutil.move(f"{root}/{dir_name}", SRC_PATH)

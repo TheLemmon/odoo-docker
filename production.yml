@@ -8,7 +8,6 @@ services:
       args:
         - GIT_BRANCH=13.0
         - ODOO_VERSION=13.0
-        - GITHUB_TOKEN=49e2c826e5493dc0925cf9bd93a3797c2133bf7b
     ports:
       - "8069:8069"
       - "8071:8071"
