@@ -6,8 +6,7 @@ import shutil
 YML_PATH = "/home/odoo/config/addons-external.yml"
 DESTINATION = "/home/odoo/src/addons-external/"
 SOURCE_PATH = "/home/odoo/temp/addons-external/"
-GITHUB_DIRECTORIES = ('branches', 'hooks', 'info', 'logs', 'objects', 'refs', '.git')
-
+GITHUB_DIRECTORIES = ('branches', 'hooks', 'info', 'logs', 'objects', 'refs', '.git', 'README.md')
 
 if __name__ == "__main__":
     for (root, dirs, files) in os.walk(SOURCE_PATH, topdown=True):
