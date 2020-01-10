@@ -5,7 +5,7 @@ from os import path
 import yaml
 import shutil
 
-YML_PATH = "/home/odoo/config/addons-external.yml"
+YML_PATH = "/home/odoo/config/external-repositories.yml"
 DESTINATION = "/home/odoo/src/addons-external/"
 SOURCE = "/home/odoo/temp/"
 GITHUB_DIRECTORIES = ('branches', 'hooks', 'info', 'logs', 'objects', 'refs', '.git')
