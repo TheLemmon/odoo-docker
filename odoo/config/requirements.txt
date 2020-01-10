@@ -1,10 +1,10 @@
 boto3
-git-aggregator
-paramiko
 num2words
 redis
 watchdog
 xlwt
 zeep
 requests
+git-aggregator==1.7.1
+paramiko==2.6.0
 pyyaml==5.1.2
