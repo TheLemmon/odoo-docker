@@ -1,4 +1,6 @@
 ./enterprise:
+  defaults:
+    depth: 1
   remotes:
     enterprise: https://$GITHUB_TOKEN@github.com/odoo/enterprise.git
   merges:
@@ -6,6 +8,8 @@
   target: enterprise $GIT_BRANCH
 
 ./odoo-addons:
+  defaults:
+    depth: 1
   remotes:
     odoo-addons: https://$GITHUB_TOKEN@github.com/nahualventure/odoo-addons.git
   merges:
