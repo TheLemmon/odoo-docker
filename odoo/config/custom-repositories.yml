@@ -6,12 +6,3 @@
   merges:
     - enterprise $GIT_BRANCH
   target: enterprise $GIT_BRANCH
-
-./odoo-addons:
-  defaults:
-    depth: 1
-  remotes:
-    odoo-addons: https://$GITHUB_TOKEN@github.com/nahualventure/odoo-addons.git
-  merges:
-    - odoo-addons $GIT_BRANCH
-  target: odoo-addons $GIT_BRANCH
