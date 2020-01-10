@@ -7,4 +7,4 @@ watchdog
 xlwt
 zeep
 requests
-pyyaml
+pyyaml=5.1.2
