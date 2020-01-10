@@ -29,7 +29,7 @@ WORKDIR /home/odoo/src
 RUN gitaggregate -c /home/odoo/config/repositories.yml --expand-env
 
 # Clone third party repositories
-WORKDIR  /home/odoo/temp/addons-external
+WORKDIR  /home/odoo/temp/
 RUN gitaggregate -c /home/odoo/config/addons-external.yml --expand-env
 RUN /usr/bin/python3 /home/odoo/config/restructure-addons-external.py
 

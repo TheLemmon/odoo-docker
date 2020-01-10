@@ -7,7 +7,7 @@ import shutil
 
 YML_PATH = "/home/odoo/config/addons-external.yml"
 DESTINATION = "/home/odoo/src/addons-external/"
-SOURCE = "/home/odoo/temp/addons-external"
+SOURCE = "/home/odoo/temp/"
 GITHUB_DIRECTORIES = ('branches', 'hooks', 'info', 'logs', 'objects', 'refs', '.git')
 
 
@@ -16,7 +16,7 @@ if __name__ == "__main__":
         doc = yaml.full_load(file)
         for repository, attributes in doc.items():
             dir_name = repository.split('/')[-1]
-            for (root, dirs, files) in os.walk(f"{SOURCE}{dir_name}"):
+            for (root, dirs, files) in os.walk(f"{SOURCE}/{dir_name}"):
                 modules = attributes.get('modules', dirs)
                 if isinstance(modules, str):
                     modules = modules.split(',')
@@ -25,6 +25,6 @@ if __name__ == "__main__":
                         continue
                     source = f"{root}/{dir_name}"
                     if path.exists(source):
-                        shutil.move(source, DESTINATION)
+                        shutil.move(source, f"{DESTINATION}/{dir_name}")
                 break
         shutil.rmtree(SOURCE)
