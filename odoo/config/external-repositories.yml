@@ -6,3 +6,21 @@
   merges:
     - odoo-fel $GIT_BRANCH
   target: odoo-fel $GIT_BRANCH
+
+./hr:
+  defaults:
+    depth: 1
+  remotes:
+    hr: https://github.com/OCA/hr.git
+  merges:
+    - hr $GIT_BRANCH
+  target: hr $GIT_BRANCH
+  
+./account-financial-reporting:
+  defaults:
+    depth: 1
+  remotes:
+    account-financial-reporting: https://github.com/OCA/account-financial-reporting.git
+  merges:
+    - account-financial-reporting $GIT_BRANCH
+  target: account-financial-reporting $GIT_BRANCH
