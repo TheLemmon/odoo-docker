@@ -24,3 +24,66 @@
   merges:
     - account-financial-reporting $GIT_BRANCH
   target: account-financial-reporting $GIT_BRANCH
+
+./stock-logistics-warehouse:
+  defaults:
+    depth: 1
+  remotes:
+    stock-logistics-warehouse: https://github.com/OCA/stock-logistics-warehouse.git
+  merges:
+    - stock-logistics-warehouse $GIT_BRANCH
+  target: stock-logistics-warehouse $GIT_BRANCH
+
+./partner-contact:
+  defaults:
+    depth: 1
+  remotes:
+    partner-contact: https://github.com/OCA/partner-contact.git
+  merges:
+    - partner-contact $GIT_BRANCH
+  target: partner-contact $GIT_BRANCH
+
+./web:
+  defaults:
+    depth: 1
+  remotes:
+    web: https://github.com/OCA/web.git
+  merges:
+    - web $GIT_BRANCH
+  target: web $GIT_BRANCH
+
+./account-financial-tools:
+  defaults:
+    depth: 1
+  remotes:
+    account-financial-tools: https://github.com/OCA/account-financial-tools.git
+  merges:
+    - account-financial-tools $GIT_BRANCH
+  target: account-financial-tools $GIT_BRANCH
+
+./server-tools:
+  defaults:
+    depth: 1
+  remotes:
+    server-tools: https://github.com/OCA/server-tools.git
+  merges:
+    - server-tools $GIT_BRANCH
+  target: server-tools $GIT_BRANCH
+
+./misc-addons:
+  defaults:
+    depth: 1
+  remotes:
+    misc-addons: https://github.com/it-projects-llc/misc-addons.git
+  merges:
+    - misc-addons $GIT_BRANCH
+  target: misc-addons $GIT_BRANCH
+
+./pos-addons:
+  defaults:
+    depth: 1
+  remotes:
+    pos-addons: https://github.com/it-projects-llc/pos-addons.git
+  merges:
+    - pos-addons $GIT_BRANCH
+  target: pos-addons $GIT_BRANCH
