@@ -6,5 +6,5 @@ xlwt
 zeep
 requests
 git-aggregator==1.7.1
-paramiko==2.6.0
+paramiko==2.10.1
 pyyaml==5.1.2
